@@ -1,4 +1,35 @@
+# Promicro nRF52840
+## Pins
+### LEDs
+Blue LED: `BLED = P0.15`
+
+## Schematic
+https://chat.nologo.tech/d/80/14#responsive
+
+
+
 ## Zephyr & West
+
+### Topology
+```
+west-workspace/
+│
+├── application/         # .git/     │
+│   ├── CMakeLists.txt               │
+│   ├── prj.conf                     │  never modified by west
+│   ├── src/                         │
+│   │   └── main.c                   │
+│   └── west.yml         # main manifest with optional import(s) and override(s)
+│                                    │
+├── modules/
+│   └── lib/
+│       └── zcbor/       # .git/ project from either the main manifest or some import.
+│
+└── zephyr/              # .git/ project
+    └── west.yml         # This can be partially imported with lower precedence or ignored.
+                         # Only the 'manifest-rev' version can be imported.
+```
+
 
 ### Setup
 Install `nrfutil` and use it to install a zephyr toolchain and a sdk to `~/ncs` (this can take a while).
@@ -56,3 +87,9 @@ Install `nrfutil` and use it to install a zephyr toolchain and a sdk to `~/ncs` 
    ├─── src/
    └─── ...
 ```
+
+
+## Links
+### ot-usb-br
+https://primalcortex.wordpress.com/2022/05/21/building-an-openthread-border-router-with-the-esp32-and-the-nrf52840-dongle/
+
