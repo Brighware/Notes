@@ -1,8 +1,12 @@
 ## Zephyr & West
 
+### Setup
+Install `nrfutil` and use it to install a zephyr toolchain and a sdk to `~/ncs` (this can take a while).
+
+
 ### Compiling
-* Start by sourcing zephyr-env.sh
-`source ~/ncs/v3.1.1/zephyr/zephyr-env.sh`
+* Start by sourcing zephyr-env.sh from the appropriate toolchain.
+`source ~/ncs/$TOOLCHAIN/zephyr/zephyr-env.sh`
 
 * Confirm environment using west:
 `west topdir`
